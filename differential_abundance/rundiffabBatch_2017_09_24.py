@@ -3,7 +3,6 @@
 @author: eyusko, updated by thether
 @edit: rridder 09/25/17
 @edit: sjohnson
-@edit: jrytlewski
 """
 
 from differentialAbundanceBatch_2017_09_22 import main, readConfig, error_log, trainCoefs, find
@@ -98,7 +97,7 @@ def parallelBatch(outputDir, batchPairs, items, coefs):
     for pairID in batchPairs:
         data[pairID]=one_pair(outputDir, pairID, batchPairs[pairID], items)
     '''
-    pool = mp.Pool(10)
+    pool = mp.Pool(10) #test run uses about 1 GB per process... instance has 4 GB, so to be on safe side, we process only 2 at a time
     tasks = [pool.apply_async(one_pair, (outputDir, pairID, batchPairs[pairID], items, coefs,)) for pairID in batchPairs]
     for process in tasks:
         try:

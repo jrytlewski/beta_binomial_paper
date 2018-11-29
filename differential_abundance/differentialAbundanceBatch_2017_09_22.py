@@ -393,7 +393,7 @@ def tsvUnion(outputDir, samples, counting, minTotal=10, productiveOnly=True, sou
                 if fields[statusi] != 'In' and productiveOnly: continue #if it is Out or Stop and productiveOnly==True, continues to next loop iteration (so it only includes 'In')
                 seq = fields[seqi] # data in either nucleotide or amino acid column
                 ct  = int(fields[cti]) # data in inputTemplateEstimate column
-                if ct<=0: 
+                if ct<=0: #inputTemplateEstimate column was weird (filled with values less than or equal to 0)
                     ct=-1
                     error_log(outputDir, "Error in %s sample file. Clone %s had a processing issue with TemplateEstimate = %s. The clone has been excluded from analysis." %(sample[0], seq, fields[cti]))
                     try: seqs[seq][sample[0]] = ct
