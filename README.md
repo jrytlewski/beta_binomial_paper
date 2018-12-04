@@ -9,6 +9,8 @@ Immunosequencing data for the urothelial cancer patients can be freely downloade
 
 
 ## Usage
+Compatible with Python 2.7; needs the following python dependencies installed: _sys, os, math, scipy, matplotlib, numpy, deepcopy, gzip, optparse, traceback, multiprocessing_
+
 The following are example syntax that can be executed on the data found in the _healthy_donor_files_ folder. The configuration.ini settings should not be changed, unless specified, to reproduce results. 
 
 
@@ -26,13 +28,13 @@ Columns need to be labeled exactly as shown in above example. ".gz" should only 
 #### Example 1 -- original binomial model
 In the configuration.ini file, set _method = binomial_ before running.
 ```
-python2.7 differential_abundance/rundiffabBatch_2017_09_24.py --batchfile batchfile_healthy.txt --config differential_abundance/configuration.ini --tsvDir healthy_donor_files/ --outDir diffab_results --parallel
+python2.7 differential_abundance/rundiffabBatch_2017_09_24.py --batchfile batchfile_healthy.tsv --config differential_abundance/configuration.ini --tsvDir healthy_donor_files/ --outDir diffab_results --parallel
 ```
 
 #### Example 2 -- new beta binomial model
 In the configuration.ini file, set _method = betabinomial_ before running.
 ```
-python2.7 differential_abundance/rundiffabBatch_2017_09_24.py --batchfile batchfile_healthy.txt --config differential_abundance/configuration.ini --train differential_abundance/TrainingTSVs/replicates_Subject1_Standard.csv --tsvDir healthy_donor_files/ --outDir diffab_results --parallel
+python2.7 differential_abundance/rundiffabBatch_2017_09_24.py --batchfile batchfile_healthy.tsv --config differential_abundance/configuration.ini --train differential_abundance/TrainingTSVs/replicates_Subject1_Standard.csv --tsvDir healthy_donor_files/ --outDir diffab_results --parallel
 ```
 
 #### Disclaimer
