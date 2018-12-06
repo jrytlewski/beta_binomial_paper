@@ -9,9 +9,9 @@ Immunosequencing data for the urothelial cancer patients can be freely downloade
 
 
 ## Usage
-Compatible with Python 2.7; needs the following python dependencies installed: _sys, os, math, scipy, matplotlib, numpy, deepcopy, gzip, optparse, traceback, multiprocessing_
+Compatible with Python 2.7; needs the following python dependencies installed: _sys, os, math, scipy 0.17.1, matplotlib 1.5.1 (> 2.0 recommended), numpy 1.14.2, pandas 0.22.0, deepcopy, gzip, optparse, traceback, multiprocessing_
 
-The following are example syntax that can be executed on the data found in the _healthy_donor_files_ folder. The configuration.ini settings should not be changed, unless specified, to reproduce results. 
+The following are example syntax that can be executed on the data found in the _healthy_donor_files_ folder. The configuration.ini settings should not be changed, unless specified, to reproduce results.
 
 
 Example file for --batchFile:
